@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+# Authentification => Sign up
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h2> Inscription </h2>
+{% if forms.error %}
+  {{ form.error }}
+{% endif %}
+
+<form method="post">
+  {{ form.as_p }}
+  {% csrf_token %}
+  <button type="sumit"> S'inscrire </button>
+</form>
+
+{% enblock content %}
