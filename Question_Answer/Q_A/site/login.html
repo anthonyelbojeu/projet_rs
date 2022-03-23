@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+# Authentification => Login
+
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit"> Se connecter </button>
+    </form>
+    <p> Pas encore inscrit ? <a href="{% url 'signup' %}"> Inscrivez-vous dès maintenant. </a> </p>
+
+{% end content %}
+
+
